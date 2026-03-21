@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Login</title>
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="h-screen flex items-center justify-center bg-gradient-to-bl from-slate-950 to-blue-500">
+
+    <div class="w-[320px] bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/10 shadow-xl">
+
+        <h2 class="text-2xl font-semibold text-white text-center mb-6">Login</h2>
+
+        <form id="loginForm" class="space-y-5">
+
+            <!-- Email -->
+            <div>
+                <input type="text" id="email" placeholder="Email address"
+                    class="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-gray-200 outline-none focus:ring-2 focus:ring-blue-400">
+                <p id="emailError" class="text-red-300 text-sm mt-1"></p>
+            </div>
+
+            <!-- Password -->
+            <div>
+                <input type="password" id="password" placeholder="Password"
+                    class="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-gray-200 outline-none focus:ring-2 focus:ring-blue-400">
+                <p id="passwordError" class="text-red-300 text-sm mt-1"></p>
+            </div>
+
+            <!-- Button -->
+            <button type="submit"
+                class="w-full bg-white text-blue-700 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
+                Login
+            </button>
+
+        </form>
+
+        <p class="text-white text-sm text-center mt-5">
+            Don't have an account? <span><a href="#">Sign up</a></span>
+        </p>
+
+    </div>
+
+    <div id="successPopup"
+        class="fixed inset-0 flex items-center justify-center bg-black/30 backdrop-blur-md opacity-0 scale-95 pointer-events-none transition-all duration-300">
+
+        <div class="bg-white p-8 rounded-2xl text-center w-[280px] transform transition-all duration-300">
+
+            <div class="text-green-500 text-5xl mb-3"><i class="fa-solid fa-check"></i></div>
+
+            <h3 class="text-xl font-semibold mb-2">Login Successful</h3>
+
+            <p class="text-gray-500 text-sm">Welcome back!</p>
+
+            <button id="closePopup" class="mt-5 bg-green-500 text-white px-6 py-2 rounded-lg">
+                Continue
+            </button>
+
+        </div>
+    </div>
+    <script src="validation.js"></script>
+</body>
+
+</html>
