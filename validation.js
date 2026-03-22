@@ -10,10 +10,10 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     emailError.innerHTML = "";
     passwordError.innerHTML = "";
 
-    if (email[0] === email[0].toUpperCase()) {
-        emailError.innerHTML = "Email should not start with a capital letter";
+    if (email || password === ""){
+         emailError.innerHTML = "Enter your email";
+         passwordError.innerHTML = "Enter your password";
     }
-
 
     else if (!email || !email.includes("@") || !email.includes(".")) {
         emailError.innerHTML = "Enter a valid email address";
