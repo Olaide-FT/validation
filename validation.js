@@ -4,18 +4,21 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
 
+    let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+
     let emailError = document.getElementById("emailError");
     let passwordError = document.getElementById("passwordError");
+
+
 
     emailError.innerHTML = "";
     passwordError.innerHTML = "";
 
-    if (!email && !password ){
-         emailError.innerHTML = "Enter your email";
-         passwordError.innerHTML = "Enter your password";
+    if (!email && !password) {
+        emailError.innerHTML = "Enter your email";
+        passwordError.innerHTML = "Enter your password";
     }
-
-    else if (!email || !email.includes("@") || !email.includes(".")) {
+    else if (!emailPattern.test(email)) {
         emailError.innerHTML = "Enter a valid email address";
     }
 
@@ -37,3 +40,5 @@ document.getElementById("closePopup").addEventListener("click", function () {
     popup.classList.remove("opacity-100", "scale-100");
     popup.classList.add("opacity-0", "scale-95", "pointer-events-none");
 });
+
+
