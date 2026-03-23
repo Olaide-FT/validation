@@ -18,7 +18,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
         emailError.innerHTML = "Enter your email";
         passwordError.innerHTML = "Enter your password";
     }
-    else if (!emailPattern) {
+    else if (!emailPattern.test(email)) {
         emailError.innerHTML = "Enter a valid email address";
     }
 
